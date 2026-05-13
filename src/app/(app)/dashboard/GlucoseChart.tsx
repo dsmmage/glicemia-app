@@ -58,7 +58,8 @@ export function GlucoseChart({ data, thresholdHigh, thresholdLow }: Props) {
   }))
 
   return (
-    <ResponsiveContainer width="100%" height={200} role="img" aria-label={`Gráfico de glicemia com ${data.length} medições`}>
+    <div role="img" aria-label={`Gráfico de glicemia com ${data.length} medições`}>
+    <ResponsiveContainer width="100%" height={200}>
       <LineChart data={chartData} margin={{ top: 8, right: 8, bottom: 0, left: -16 }}>
         <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
         <XAxis
@@ -87,5 +88,6 @@ export function GlucoseChart({ data, thresholdHigh, thresholdLow }: Props) {
         />
       </LineChart>
     </ResponsiveContainer>
+    </div>
   )
 }
